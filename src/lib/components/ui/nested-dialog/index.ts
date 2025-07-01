@@ -5,6 +5,10 @@ import Footer from "./dialog-footer.svelte";
 import Header from "./dialog-header.svelte";
 import Title from "./dialog-title.svelte";
 import InnerDialogContent from "./inner-dialog-content.svelte";
+import InnerDialogDescription from "./inner-dialog-description.svelte";
+import InnerDialogFooter from "./inner-dialog-footer.svelte";
+import InnerDialogHeader from "./inner-dialog-header.svelte";
+import InnerDialogTitle from "./inner-dialog-title.svelte";
 import InnerDialogRoot from "./inner-dialog.svelte";
 import Root from "./nested-dialog.svelte";
 
@@ -28,7 +32,15 @@ export {
   InnerDialogRoot as InnerDialog,
   InnerDialogContent,
   InnerDialogContent,
+  InnerDialogDescription,
+  InnerDialogDescription,
+  InnerDialogFooter,
+  InnerDialogFooter,
+  InnerDialogHeader,
+  InnerDialogHeader,
   InnerDialogRoot,
+  InnerDialogTitle,
+  InnerDialogTitle,
   Root,
   Title,
   type Position as InnerDialogPosition
