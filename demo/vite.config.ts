@@ -29,8 +29,8 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      $lib: path.resolve(__dirname, "../../src/lib"),
-      $variants: path.resolve(__dirname, "../../src/variants")
+      $lib: path.resolve(__dirname, "../src/lib"),
+      $variants: path.resolve(__dirname, "../src/variants")
     }
   }
 });

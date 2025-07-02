@@ -21,16 +21,16 @@
   const context = getContext(dialogContext);
   if (!context) throw new Error("InnerDialogContent must be used within a Dialog");
 
-  const { innerOpen, setInnerOpen } = context;
+  let { getInnerOpen, setInnerOpen } = context;
 
-  const isDragging = $state(false);
-  const startY = $state(0);
-  const currentY = $state(0);
-  const isClosingByDrag = $state(false);
+  let isDragging = $state(false);
+  let startY = $state(0);
+  let currentY = $state(0);
+  let isClosingByDrag = $state(false);
   let contentRef: HTMLDivElement;
 
   $effect(() => {
-    if ($innerOpen) {
+    if (getInnerOpen()) {
       currentY = 0;
       isClosingByDrag = false;
     }

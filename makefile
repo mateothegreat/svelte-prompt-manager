@@ -58,11 +58,13 @@ build: ## Build the production version of the app.
 clean: ## Clean the project.
 	@rm -rf node_modules demo/node_modules
 
-test/app/serve: ## Serve the test version of the app.
-	if [ ! -d "test/node_modules" ]; then \
-	cd test && npm install; \
+demo: ## Serve the demo version of the app.
+	if [ ! -d "demo/node_modules" ]; then \
+	cd demo && npm install; \
 	fi
-	cd test/app && npm run dev
+	cd demo && npm run dev
 
-test/app/build: ## Build the test version of the app.
-	cd test/app && npm run build
+.PHONY: demo
+
+demo/build: ## Build the demo version of the app.
+	cd demo && npm run build

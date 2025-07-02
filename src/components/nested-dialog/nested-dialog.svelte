@@ -5,21 +5,22 @@
   import type { HTMLAttributes } from "svelte/elements";
 
   interface DialogContextValue {
-    innerOpen: boolean;
+    getInnerOpen: () => boolean;
     setInnerOpen: (value: boolean) => void;
   }
 
-  export const dialogContext = Symbol();
+  let dialogContext = Symbol();
+  export { dialogContext };
 </script>
 
 <script lang="ts">
   let { class: className, ...props } = $props<HTMLAttributes<HTMLDivElement>>();
 
-  const outerOpen = $state(false);
-  const innerOpen = $state(false);
+  let outerOpen = $state(false);
+  let innerOpen = $state(false);
 
   setContext<DialogContextValue>(dialogContext, {
-    innerOpen,
+    getInnerOpen: () => innerOpen,
     setInnerOpen: (value) => {
       innerOpen = value;
     }

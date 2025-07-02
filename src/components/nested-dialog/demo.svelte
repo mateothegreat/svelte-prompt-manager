@@ -19,8 +19,7 @@
     InnerDialogDescription,
     InnerDialogFooter,
     InnerDialogHeader,
-    InnerDialogTitle,
-    InnerDialogTrigger
+    InnerDialogTitle
   } from ".";
 
   const selectedPaymentMethod = $state("creditcard");

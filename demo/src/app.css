@@ -1,8 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@custom-variant dark (&:is(.dark *));
 
-@config "../tailwind.config.ts";
+/* Add the @source directive to tell Tailwind where to scan for classes */
+@source "../../src/**/*.{html,js,svelte,ts}";
+@source "./src/**/*.{html,js,svelte,ts}";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --radius: 0.625rem;

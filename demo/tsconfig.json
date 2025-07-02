@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -17,16 +17,9 @@
     "noEmit": true,
     "moduleResolution": "bundler",
     "paths": {
-      "@mateothegreat/new": [
-        "../../src"
-      ],
-      "@mateothegreat/new/*": [
-        "../../src/*"
-      ],
-    },
+      "@mateothegreat/prompt-manager": ["../src"],
+      "@mateothegreat/prompt-manager/*": ["../src/*"]
+    }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.svelte"
-  ]
+  "include": ["./src/**/*.ts", "./src/**/*.svelte"]
 }

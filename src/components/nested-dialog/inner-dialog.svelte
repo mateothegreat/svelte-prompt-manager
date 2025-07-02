@@ -7,15 +7,15 @@
 </script>
 
 <script lang="ts">
-  let { class: className, ...props } = $props<HTMLAttributes<HTMLDivElement>>();
+  let { ...props }: HTMLAttributes<HTMLDivElement> = $props();
 
-  const context = getContext(dialogContext);
+  let context = getContext(dialogContext);
   if (!context) throw new Error("InnerDialog must be used within a Dialog");
 
-  const { innerOpen, setInnerOpen } = context;
+  let { getInnerOpen, setInnerOpen } = context;
 
   let handleEscapeKeyDown = (event: KeyboardEvent) => {
-    if (event.key === "Escape" && $innerOpen) {
+    if (event.key === "Escape" && getInnerOpen()) {
       setInnerOpen(false);
       event.stopPropagation();
     }
@@ -30,6 +30,6 @@
   });
 </script>
 
-<DialogPrimitive.Root bind:open={$innerOpen} {...props}>
+<DialogPrimitive.Root open={getInnerOpen()} onOpenChange={(open) => setInnerOpen(open)} {...props}>
   <slot />
 </DialogPrimitive.Root>

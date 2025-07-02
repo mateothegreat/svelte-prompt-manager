@@ -17,24 +17,9 @@
     "moduleResolution": "bundler",
     "allowArbitraryExtensions": true,
     "paths": {
-      "$lib": [
-        "./src/lib"
-      ],
-      "$lib/*": [
-        "./src/lib/*"
-      ],
-      "$variants": [
-        "./src/variants"
-      ],
-      "$variants/*": [
-        "./src/variants/*"
-      ]
-    },
-    "types": [
-      "vitest/importMeta"
-    ]
+      "$lib": ["./src/lib"],
+      "$lib/*": ["./src/lib/*"]
+    }
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["./src/**/*"]
 }

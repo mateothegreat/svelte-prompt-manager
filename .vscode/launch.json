@@ -4,15 +4,10 @@
     {
       "name": "server",
       "request": "launch",
-      "runtimeArgs": [
-        "run",
-        "dev"
-      ],
+      "runtimeArgs": ["run", "dev"],
       "runtimeExecutable": "npm",
       "cwd": "${workspaceFolder}/test/app",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
+      "skipFiles": ["<node_internals>/**"],
       "type": "node",
       "console": "integratedTerminal"
     },
@@ -27,10 +22,7 @@
   "compounds": [
     {
       "name": "test:app:debug",
-      "configurations": [
-        "server",
-        "browser"
-      ]
+      "configurations": ["server", "browser"]
     }
   ]
 }

@@ -1,12 +1,18 @@
-<!-- src/lib/components/ui/radio-group/radio-group.svelte -->
 <script lang="ts">
   import { cn } from "$lib/utils";
   import { RadioGroup as RadioGroupPrimitive } from "bits-ui";
-  import type { HTMLAttributes } from "svelte/elements";
 
-  let { class: className, ...props } = $props<HTMLAttributes<HTMLDivElement>>();
+  let {
+    ref = $bindable(null),
+    class: className,
+    value = $bindable(""),
+    ...restProps
+  }: RadioGroupPrimitive.RootProps = $props();
 </script>
 
-<RadioGroupPrimitive.Root class={cn("grid gap-2", className)} {...props}>
-  <slot />
-</RadioGroupPrimitive.Root>
+<RadioGroupPrimitive.Root
+  bind:ref
+  bind:value
+  data-slot="radio-group"
+  class={cn("grid gap-3", className)}
+  {...restProps} />
